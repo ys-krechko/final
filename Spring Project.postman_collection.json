@@ -1,0 +1,1098 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Spring Project",
+		"_postman_id": "affad014-fe70-2177-178d-51054d3e002d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 Authentication",
+			"description": "",
+			"item": [
+				{
+					"name": "SignIn",
+					"request": {
+						"url": "http://localhost:8080/sp/authentication/signIn",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"user.admin\", \"password\":\"1234\"}"
+						},
+						"description": "signIn"
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/sp/authentication/refresh?token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2NzgzMDUyLCJleHAiOjE1NTY3ODM2NTJ9.UN7a5y1MMWuLp6i5p9DEQyxdRAqRp6th9VD5-gEjXgGWQU39Karb29lPwj8Gwc-XkbhgbnpuETA4SMrRAHxoXQ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sp",
+								"authentication",
+								"refresh"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2NzgzMDUyLCJleHAiOjE1NTY3ODM2NTJ9.UN7a5y1MMWuLp6i5p9DEQyxdRAqRp6th9VD5-gEjXgGWQU39Karb29lPwj8Gwc-XkbhgbnpuETA4SMrRAHxoXQ",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": "refreshID"
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp",
+					"request": {
+						"url": "http://localhost:8080/sp/authentication/signUp",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"user.ne.user\", \"password\":\"1f0s\", \"roles\":[\"ROLE_USER\", \"ROLE_ADMIN\"]}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02 Roles",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:8080/sp/roles",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"url": "http://localhost:8080/sp/roles/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8080/sp/roles",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"ROLE_MANAGER\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8080/sp/roles/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":3, \"name\":\"ROLE_BAD_MANAGER\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8080/sp/roles/3",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTcwNzUyLCJleHAiOjE1NTY5NzEzNTJ9.XcgrT2OD53cM-rxApXdXDWEfhdZQnrZYXF8PBvEPMUAgm3WSOqvRnjfCda-opTKz4jgxVrvzwV51aVOE5433TQ",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03 Users",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:8080/sp/users",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "getAll"
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"url": "http://localhost:8080/sp/users/2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY4MjkxLCJleHAiOjE1NTY5Njg4OTF9.e3YEEc8Pxj7K7vRyP2kvwF0EiLKHEbryFqczCoVGo1qztr1-fJjeitlfMes6LbiTJh_-6BtjpUS5PKU94Wj9Kg",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8080/sp/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU3MjMwNjk5LCJleHAiOjE1NTcyMzEyOTl9.07PC6ciadOUe4BCVy2rt7htYVwVylz97gPTN6_PJsoxaE0CVi_Ro4YOJGrPzaLN_YXedMlZ42D3HbgkbBcFB_Q",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"user.manager\", \"password\":\"111\", \"roles\":[\"ROLE_USER\"]}"
+						},
+						"description": "create"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8080/sp/users/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU3MjMxNzk0LCJleHAiOjE1NTcyMzIzOTR9.qjPEFg9Mi3fQfyz8UkW2J_XFc_D873WNteFtlzmWUSrFcGuf3rRIZmtydUHOwOzJCVqKJwgdNt7fkhAnABEilg",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":3, \"name\":\"user.manager\", \"password\":\"$2y$16$3aY2F2jE3JruMPCXwCVpvOQVHikWxmuoZvZ5dKMa43xaE3VAD.xra\", \"rolesId\":[1]}"
+						},
+						"description": "update"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8080/sp/users/3",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU3MjMxNTczLCJleHAiOjE1NTcyMzIxNzN9.72NVRgnIvfMxBZYyWwTDlG4l40eU6YWn9AIy1lRakUgm6RH7dVXzwFO99L9rzQuj4nn2Gfm0okVUxHrXHotcHw",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04 HotelRoomPrices",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRoomPrices/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY4MjkxLCJleHAiOjE1NTY5Njg4OTF9.e3YEEc8Pxj7K7vRyP2kvwF0EiLKHEbryFqczCoVGo1qztr1-fJjeitlfMes6LbiTJh_-6BtjpUS5PKU94Wj9Kg",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"date\":\"2019-05-01\",\"pricePerNight\":2.53}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRoomPrices/12",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY4MjkxLCJleHAiOjE1NTY5Njg4OTF9.e3YEEc8Pxj7K7vRyP2kvwF0EiLKHEbryFqczCoVGo1qztr1-fJjeitlfMes6LbiTJh_-6BtjpUS5PKU94Wj9Kg",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"date\":\"2019-05-01\",\"pricePerNight\":2.53}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRoomPrices/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLnNpbXBsZSIsImlhdCI6MTU1Njg3MDIxNiwiZXhwIjoxNTU2ODcwODE2fQ.dMaxg7j0t5WAiJwltArth_oCjN6zTrDI4fn0WJpMTXfT9X70Nt38AdmBWMgmXhrIPxTp7VSGlP2o6rmlPW2KmQ",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"date\":\"2019-06-01\",\"pricePerNight\":2.54}"
+						},
+						"description": "create"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRoomPrices/16",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY4MjkxLCJleHAiOjE1NTY5Njg4OTF9.e3YEEc8Pxj7K7vRyP2kvwF0EiLKHEbryFqczCoVGo1qztr1-fJjeitlfMes6LbiTJh_-6BtjpUS5PKU94Wj9Kg",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 16,\n    \"date\": \"2009-12-01\",\n    \"pricePerNight\": 5.11\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRoomPrices/16",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY4MjkxLCJleHAiOjE1NTY5Njg4OTF9.e3YEEc8Pxj7K7vRyP2kvwF0EiLKHEbryFqczCoVGo1qztr1-fJjeitlfMes6LbiTJh_-6BtjpUS5PKU94Wj9Kg",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 16,\n    \"date\": \"2009-12-01\",\n    \"pricePerNight\": 5.11\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "05 HotelRooms",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRooms",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRooms/2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY4MjkxLCJleHAiOjE1NTY5Njg4OTF9.e3YEEc8Pxj7K7vRyP2kvwF0EiLKHEbryFqczCoVGo1qztr1-fJjeitlfMes6LbiTJh_-6BtjpUS5PKU94Wj9Kg",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRooms",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU3MjMxMzYzLCJleHAiOjE1NTcyMzE5NjN9.KlCl7WJjwM4g430BPeLcEvuHlzxGiGHpRB1_H9p1G3wBPElDdE86aoKxtU4a7SCpCVbtjwYdoeysR9-uE8kIsw",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"комната в общаге\",\n    \"numberOfGuests\": 15,\n    \"foodType\": \"что словил, то твоё\",\n    \"hotelRoomPriceIds\": [10, 5, 8]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRooms/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU3MjMxMzYzLCJleHAiOjE1NTcyMzE5NjN9.KlCl7WJjwM4g430BPeLcEvuHlzxGiGHpRB1_H9p1G3wBPElDdE86aoKxtU4a7SCpCVbtjwYdoeysR9-uE8kIsw",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"type\": \"комната в общаге\",\n    \"numberOfGuests\": 10,\n    \"foodType\": \"что словил, то твоё\",\n    \"hotelRoomPriceIds\": [10, 5, 8, 1]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRooms/3",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY4OTI4LCJleHAiOjE1NTY5Njk1Mjh9.ZX4uyCC5aDKJrSIEWyHjgzobP3eQU1OEfQ05CC44pND6UtJnxnoOUm0gx4N1jSIjLz4bwHH3grXesMySBt5W-g",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"type\": \"комната в общаге\",\n    \"numberOfGuests\": 10,\n    \"foodType\": \"что словил, то твоё\",\n    \"hotelRoomPriceId\": [10, 5, 8, 1]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "06 Customers",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:8080/sp/customers",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY3MzkzLCJleHAiOjE1NTY5Njc5OTN9.0T_v89CFuN8zGynih2tRYm-y4SWU3blORG0vsEMlqat4MWl-EcCxQCTWOqQniARX_96iGJvY4e7tABTPmf54oQ",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"url": "http://localhost:8080/sp/customers/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY3MzkzLCJleHAiOjE1NTY5Njc5OTN9.0T_v89CFuN8zGynih2tRYm-y4SWU3blORG0vsEMlqat4MWl-EcCxQCTWOqQniARX_96iGJvY4e7tABTPmf54oQ",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8080/sp/customers",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY3MzkzLCJleHAiOjE1NTY5Njc5OTN9.0T_v89CFuN8zGynih2tRYm-y4SWU3blORG0vsEMlqat4MWl-EcCxQCTWOqQniARX_96iGJvY4e7tABTPmf54oQ",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customersFirstName\": \"Danaris\",\n    \"customersLastName\": \"Targarian\",\n    \"customersPassportNumber\": \"у матери драконов?\",\n    \"customersContractNumber\": \"см. выше\",\n    \"customersContractDateOfSigning\": \"2019-03-12\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8080/sp/customers/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY3MzkzLCJleHAiOjE1NTY5Njc5OTN9.0T_v89CFuN8zGynih2tRYm-y4SWU3blORG0vsEMlqat4MWl-EcCxQCTWOqQniARX_96iGJvY4e7tABTPmf54oQ",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"customersFirstName\": \"Danaris\",\n    \"customersLastName\": \"Targarian\",\n    \"customersPassportNumber\": \"у матери драконов?\",\n    \"customersContractNumber\": \"надо спросить у датракийцев\",\n    \"customersContractDateOfSigning\": \"2019-03-12\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8080/sp/customers/3",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY3MzkzLCJleHAiOjE1NTY5Njc5OTN9.0T_v89CFuN8zGynih2tRYm-y4SWU3blORG0vsEMlqat4MWl-EcCxQCTWOqQniARX_96iGJvY4e7tABTPmf54oQ",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"customersFirstName\": \"Danaris\",\n    \"customersLastName\": \"Targarian\",\n    \"customersPassportNumber\": \"у матери драконов?\",\n    \"customersContractNumber\": \"надо спросить у датракийцев\",\n    \"customersContractDateOfSigning\": \"2019-03-12\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "07 Insurances",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:8080/sp/insurances",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY3OTAwLCJleHAiOjE1NTY5Njg1MDB9.yS80senMsyN1awHXLRispgfKpPG6UnVGeEUmTYZ5fG93DXzLqqnkMeHeTq2LK2T86_aCFBEYU6V0DpcLc-ESfQ",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"url": "http://localhost:8080/sp/insurances/2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY3OTAwLCJleHAiOjE1NTY5Njg1MDB9.yS80senMsyN1awHXLRispgfKpPG6UnVGeEUmTYZ5fG93DXzLqqnkMeHeTq2LK2T86_aCFBEYU6V0DpcLc-ESfQ",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8080/sp/insurances",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY3OTAwLCJleHAiOjE1NTY5Njg1MDB9.yS80senMsyN1awHXLRispgfKpPG6UnVGeEUmTYZ5fG93DXzLqqnkMeHeTq2LK2T86_aCFBEYU6V0DpcLc-ESfQ",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"insuranceType\": \"Regularssssssssss\",\n    \"insurancePrice\": 0.00\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8080/sp/insurances/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY3OTAwLCJleHAiOjE1NTY5Njg1MDB9.yS80senMsyN1awHXLRispgfKpPG6UnVGeEUmTYZ5fG93DXzLqqnkMeHeTq2LK2T86_aCFBEYU6V0DpcLc-ESfQ",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"insuranceType\": \"Not so Regulars\",\n    \"insurancePrice\": 999999.99\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8080/sp/insurances/3",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTY3OTAwLCJleHAiOjE1NTY5Njg1MDB9.yS80senMsyN1awHXLRispgfKpPG6UnVGeEUmTYZ5fG93DXzLqqnkMeHeTq2LK2T86_aCFBEYU6V0DpcLc-ESfQ",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"insuranceType\": \"Not so Regulars\",\n    \"insurancePrice\": 999999.99\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "08 HotelsAddress",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelsAddresses",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelsAddresses/2",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelsAddresses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"postCode\":\"1s21\", \"country\":\"USA\", \"city\":\"Springfield\", \"street\":\"some\", \"buildingNumber\":\"10/1\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelsAddresses/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":3, \"postCode\":\"1s21\", \"country\":\"Canada\", \"city\":\"Springfield\", \"street\":\"some\", \"buildingNumber\":\"10/1\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelsAddresses/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "09 Hotels",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:8080/sp/hotels",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"type\": \"комната в общаге\",\n    \"numberOfGuests\": 10,\n    \"foodType\": \"что словил, то твоё\",\n    \"hotelRoomPriceId\": [10, 5, 8, 1]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"url": "http://localhost:8080/sp/hotels/2",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"type\": \"комната в общаге\",\n    \"numberOfGuests\": 10,\n    \"foodType\": \"что словил, то твоё\",\n    \"hotelRoomPriceId\": [10, 5, 8, 1]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8080/sp/hotels",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hotelsName\": \"wops\",\n    \"stars\": 0,\n    \"hotelsAddressId\":4\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8080/sp/hotels/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"hotelsName\": \"wops\",\n    \"stars\": 0,\n    \"hotelsAddressId\":3\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8080/sp/hotels/3",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":3,\n    \"hotelsName\": \"wops\",\n    \"stars\": 0,\n    \"hotelsAddress\": \"Same as ever\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "10 HotelRoomHotels",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRoomHotels",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRoomHotels/3",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTcwMTk3LCJleHAiOjE1NTY5NzA3OTd9.l34RrWVVICLTofJGQG_6BN68kOcXbd3WlfULrNDgeB7AGKjkGvIrQOYHPUE7k18a5r4BNFqJgnTn8pZEZ-B6fg",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRoomHotels",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTcwMTk3LCJleHAiOjE1NTY5NzA3OTd9.l34RrWVVICLTofJGQG_6BN68kOcXbd3WlfULrNDgeB7AGKjkGvIrQOYHPUE7k18a5r4BNFqJgnTn8pZEZ-B6fg",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"hotelId\":2, \"hotelRoomId\":2}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRoomHotels/4",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTcwMTk3LCJleHAiOjE1NTY5NzA3OTd9.l34RrWVVICLTofJGQG_6BN68kOcXbd3WlfULrNDgeB7AGKjkGvIrQOYHPUE7k18a5r4BNFqJgnTn8pZEZ-B6fg",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":4, \"hotelId\":1, \"hotelRoomId\":2}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8080/sp/hotelRoomHotels/4",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyLmFkbWluIiwiaWF0IjoxNTU2OTcwMTk3LCJleHAiOjE1NTY5NzA3OTd9.l34RrWVVICLTofJGQG_6BN68kOcXbd3WlfULrNDgeB7AGKjkGvIrQOYHPUE7k18a5r4BNFqJgnTn8pZEZ-B6fg",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "11 OrderLists",
+			"description": "",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"url": "http://localhost:8080/sp/orderLists",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"url": "http://localhost:8080/sp/orderLists/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8080/sp/orderLists",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"beginningDateOfTour\":\"2019-04-30\", \"amountOfDaysOfTour\":8, \"numberOfTourists\":2, \"userId\":1, \"insuranceId\":1, \"customerId\":1, \"hotelRoomHotelId\":1}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8080/sp/orderLists/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2, \"beginningDateOfTour\":\"2019-02-26\", \"amountOfDaysOfTour\":10, \"numberOfTourists\":1, \"userId\":1, \"insuranceId\":2, \"customerId\":1, \"hotelRoomHotelId\":2}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8080/sp/orderLists/2",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
